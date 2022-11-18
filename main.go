@@ -12,7 +12,7 @@ func main() {
 	app := fiber.New()
 	app.Use(cors.New(
 		cors.Config{
-			AllowOrigins: "http://localhost:3000",
+			AllowOrigins: "*",
 			AllowHeaders: "Origin, Content-Type, Accept",
 		},
 	))
@@ -24,5 +24,5 @@ func main() {
 	routes.MenuRoute(app) //add this
 	routes.CategoryRoute(app)
 
-	app.Listen(":6100")
+	app.Listen(":8080")
 }
